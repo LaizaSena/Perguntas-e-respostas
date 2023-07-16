@@ -6,11 +6,27 @@
 </head>
 
 <body>
-    <h3>Perguntas:</h3>
-    <a href="./perguntar">
-        <h3>Perguntas:</h3>
-    </a>
-    <h3>Perguntas:</h3>
+    <div class="container">
+
+        <a class="btn btn-primary" href="./perguntar">Perguntar</a>
+
+        <h1>Perguntas</h1>
+        <% perguntas.forEach(pergunta=> { %>
+            <div class="card">
+                <div class="card-body">
+                    <p>
+                        <%= pergunta.titulo %>
+                    </p>
+                    <p>
+                        <%= pergunta.descricao %>
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a href="/pergunta/<%= pergunta.id %>"><button class="btn btn-primary">Responder</button></a>
+                </div>
+            </div>
+            <% }) %>
+    </div>
     <%- include ("partials/script.ejs") %>
 </body>
 
