@@ -1,6 +1,8 @@
 @import url("./perguntar.css");
+@import url("./nav.css");
 
 :root {
+    --background: #343a40;
     --preto: #000000;
     --branco: #ffffff;
     --cinza-escuro: #999999;
