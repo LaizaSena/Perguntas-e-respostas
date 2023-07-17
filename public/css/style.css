@@ -1,7 +1,14 @@
+@import url("./perguntar.css");
+
 :root {
+    --preto: #000000;
+    --branco: #ffffff;
+    --cinza-escuro: #999999;
     --cinza: #eceff1;
+    --roxo: #6f42c1;
+    --amarelo: #ffc107;
 }
 
-body{
+body {
     background-color: var(--cinza);
 }

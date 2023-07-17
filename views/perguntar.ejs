@@ -4,22 +4,21 @@
 
     <body>
         <%- include("partials/nav.ejs")%>
-            <div class="container">
-                <main class="card">
-                    <section class="card__header">
-                        <h3>Realizar pergunta</h3>
-                    </section>
-                    <section class="card__body">
-
-                        <form method="post" action="/salvarpergunta">
-                            <label>Título</label>
-                            <input class="form-control" type="text" name="titulo" placeholder="Título" required>
-                            <label>Descrição</label>
-                            <textarea class="form-control" cols="30" rows="10" name="descricao"
-                                placeholder="Descreva sua pergunta" required></textarea>
-                            <button class="btn btn-primary">Enviar</button>
-                        </form>
-                    </section>
+            <div class="container__pergunta">
+                <img src="../assets/question.png" alt="mulher com dúvidas">
+                <main class="card__perguntar">
+                    <h3 class="card__perguntar-titulo">Realizar pergunta</h3>
+                    <form class="form__perguntar" method="post" action="/salvarpergunta">
+                        <div class="form-group__perguntar">
+                            <input class="input__perguntar" type="text" name="titulo" required>
+                            <label class="placeholder__perguntar">Título</label>
+                        </div>
+                        <div class="form-group__perguntar">
+                            <textarea class="text__perguntar" rows="5" name="descricao" required></textarea>
+                            <label class="placeholder__perguntar-desc">Descrição</label>
+                        </div>
+                        <button class="btn__perguntar">Enviar</button>
+                    </form>
                 </main>
             </div>
             <%- include ("partials/script.ejs") %>
