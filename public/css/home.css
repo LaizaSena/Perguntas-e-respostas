@@ -27,9 +27,3 @@
 .btn__responder-home:hover {
     opacity: 80%;
 }
-
-.relacionados {
-    position: absolute;
-    top: 180px;
-    right: 100px;
-}

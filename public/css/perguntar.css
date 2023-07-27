@@ -1,7 +1,7 @@
 .container__pergunta {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 
 .card__perguntar {

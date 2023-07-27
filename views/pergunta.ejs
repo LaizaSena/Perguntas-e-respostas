@@ -7,13 +7,31 @@
 
 <body>
     <%- include("partials/nav.ejs")%>
-        <div class="container">
-            <h1>
-                <%= pergunta.titulo %>
-            </h1>
-            <p>
-                <%= pergunta.descricao %>
-            </p>
+        <div class="container__pergunta-resposta">
+            <section class="pergunta">
+                <h1>
+                    <%= pergunta.titulo %>
+                </h1>
+                <p class="pergunta__data-publicacao">
+                    <%= pergunta.createdAt %>
+                </p>
+                <p class="pergunta__descricao">
+                    <%= pergunta.descricao %>
+                </p>
+
+            </section>
+            <form class="resposta">
+                <textarea class="resposta__input" rows="5" name="resposta" required></textarea>
+                <label class="placeholder__responder">Resposta</label>
+                <button class="btn__responder">Responder</button>
+            </form>
+            <aside class="relacionados">
+                <h3 class="relacionados__titulo">Relacionados</h3>
+                <p>texto</p>
+                <p>texto</p>
+                <p>texto</p>
+                <p>texto</p>
+            </aside>
         </div>
         <%- include ("partials/script.ejs") %>
 </body>
