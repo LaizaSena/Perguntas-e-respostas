@@ -3,6 +3,7 @@ const app = express();
 const bodyParser = require("body-parser");
 const connection = require("./connection/database");
 const Pergunta = require("./connection/Pergunta");
+const Resposta = require("./connection/Resposta");
 
 connection.authenticate()
     .then(() => {
@@ -38,8 +39,15 @@ app.get("/pergunta/:id", (req, res) => {
         where: { id: id }
     }).then(pergunta => {
         if (pergunta != undefined) {
-            res.render("pergunta", {
-                pergunta: pergunta
+            Resposta.findAll({
+                where: { perguntaId: pergunta.id },
+                // Fazendo busca no banco para compatibilidade do ID das perguntas
+                order: [['id', 'desc']]
+            }).then(respostas => {
+                res.render("pergunta", {
+                    pergunta: pergunta,
+                    respostas: respostas
+                });
             });
         } else {
             res.redirect("/"); //criar página de erro/não encontrado
@@ -60,6 +68,18 @@ app.post("/salvarpergunta", (req, res) => {
         descricao: descricao
     }).then(() => {
         res.redirect("/");
+    });
+});
+
+app.post("/responder", (req, res) => {
+    var resposta = req.body.resposta;
+    var perguntaId = req.body.pergunta;
+
+    Resposta.create({
+        resposta: resposta,
+        perguntaId: perguntaId
+    }).then(() => {
+        res.redirect("/pergunta/" + perguntaId);
     });
 });
 

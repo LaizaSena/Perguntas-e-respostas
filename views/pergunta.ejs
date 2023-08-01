@@ -20,11 +20,24 @@
                 </p>
 
             </section>
-            <form class="resposta">
+            <form class="resposta" method="post" action="/responder">
                 <textarea class="resposta__input" rows="5" name="resposta" required></textarea>
                 <label class="placeholder__responder">Resposta</label>
-                <button class="btn__responder">Responder</button>
+                <input type="hidden" name="pergunta" value="<%= pergunta.id %>">
+                <button type="submit" class="btn__responder">Responder</button>
             </form>
+            <section class="visualizarRespostas">
+                <h3>Respostas:</h3>
+                <section>
+                    <% respostas.forEach(resposta=> { %>
+                        <div class="card card__respostas">
+                            <div class="card-body">
+                                <%= resposta.resposta %>
+                            </div>
+                        </div>
+                        <% }) %>
+                </section>
+            </section>
             <aside class="relacionados">
                 <h3 class="relacionados__titulo">Relacionados</h3>
                 <p>texto</p>

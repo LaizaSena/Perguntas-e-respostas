@@ -38,14 +38,14 @@
     border-radius: .5em;
 }
 
-.placeholder__responder{
+.placeholder__responder {
     position: absolute;
     top: 2.1em;
     left: 1em;
 }
 
 .resposta__input:focus~.placeholder__responder,
-.resposta__input:valid~.placeholder__responder{
+.resposta__input:valid~.placeholder__responder {
     left: 0;
     opacity: 1;
     transform: translateY(-25px);
@@ -63,6 +63,18 @@
 
 .btn__responder:hover {
     opacity: 80%;
+}
+
+.visualizarRespostas {
+    margin: 3em 0;
+}
+
+.card__respostas {
+    width: 100%;
+}
+
+.card-body {
+    text-align: justify;
 }
 
 .relacionados {
