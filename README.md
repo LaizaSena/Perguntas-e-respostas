@@ -1,16 +1,19 @@
 # Perguntas e Respostas
+Site para perguntas e respostas que ficam armazenadas no banco de dados.
+Site criado para aprendizado de Sequelize e EJS.
 
 ## Tecnologias utilizadas:
-- Node.js
-- Javascript
 - Bootstrap
+- Javascript
 - MySQL
+- Node.js
 
 ## Funcionalidades:
 - [x] Cadastro de perguntas;
 - [x] Cadastro de respostas;
-- [x] Listagem das perguntas;
+- [x] Listagem de perguntas;
 - [ ] Busca de perguntas;
+- [ ] Relacionar outras perguntas;
 - [ ] Edição de perguntas e respostas;
 - [ ] Exclusão de perguntas e respostas;
 - [ ] Sobre;
